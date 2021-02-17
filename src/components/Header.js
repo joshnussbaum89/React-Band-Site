@@ -1,11 +1,11 @@
-import { NavLink } from 'react-router-dom';
+import { NavLink, Link } from 'react-router-dom';
 
 const Header = () => {
     return (
         <header className='header'>
             <nav className='header-nav'>
                 <h1>
-                    <NavLink to='/'>SPC MLK</NavLink>
+                    <Link to='/'>SPC MLK</Link>
                 </h1>
                 <ul className='header-nav-list'>
                     <li>

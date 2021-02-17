@@ -50,6 +50,26 @@ h2 {
   transition: 0.3s;
 }
 
+.header-nav-list {
+  display: none;
+  font-size: 1.4rem;
+  font-weight: 100;
+}
+
+.header-nav-list li {
+  list-style-type: none;
+}
+
+.header-nav-list a {
+  color: black;
+  text-decoration: none;
+  margin-left: 2rem;
+}
+
+.header-nav-list a.active {
+  color: rgb(2, 0, 104);
+}
+
 /* navigation link underline animation */
 .header-nav-list a:hover {
   color: rgb(2, 0, 104);
@@ -79,22 +99,6 @@ h2 {
 .header-nav h1 {
   font-size: 2rem;
   font-weight: 100;
-}
-
-.header-nav-list {
-  display: none;
-  font-size: 1.4rem;
-  font-weight: 100;
-}
-
-.header-nav-list li {
-  list-style-type: none;
-}
-
-.header-nav-list a {
-  color: black;
-  text-decoration: none;
-  margin-left: 2rem;
 }
 
 /* home page image */
@@ -156,11 +160,50 @@ textarea {
   background-origin: border-box;
 }
 
-/* Don't need button navigation */
-@supports (scroll-snap-type) {
-  .slider > a {
-    display: none;
-  }
+.hero-album > img {
+  margin: auto;
+  display: block;
+  object-fit: cover;
+  width: 100%;
+  max-height: 500px;
+  border-radius: 5px;
+  box-shadow: 10px 10px 15px grey;
+}
+
+.hero-album {
+  position: relative;
+  cursor: pointer;
+}
+
+.hero-album-image {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.overlay {
+  position: absolute;
+  bottom: 0;
+  background: rgba(2, 0, 104, 0.4);
+  width: 100%;
+  height: 100%;
+  transition: 0.5s ease;
+  color: white;
+  border-radius: 5px;
+  font-size: 1rem;
+  padding: 1rem;
+  text-align: center;
+}
+
+.overlay h3 {
+  font-size: 1.6rem;
+  font-weight: lighter;
+}
+
+.album-arrows {
+  font-size: 4rem;
+  display: flex;
+  justify-content: space-around;
 }
 
 /* media query - medium size screen and up */
@@ -175,5 +218,14 @@ textarea {
 
   .header-nav > div {
     display: none;
+  }
+
+  .overlay {
+    font-size: 1.4rem;
+    padding: 2rem;
+  }
+
+  .overlay h3 {
+    font-size: 2rem;
   }
 }
