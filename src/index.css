@@ -172,7 +172,7 @@ textarea {
 
 .hero-album {
   position: relative;
-  cursor: pointer;
+  /* cursor: pointer; */
 }
 
 .hero-album-image {
@@ -204,6 +204,10 @@ textarea {
   font-size: 4rem;
   display: flex;
   justify-content: space-around;
+}
+
+.album-arrows span {
+  cursor: pointer;
 }
 
 /* media query - medium size screen and up */

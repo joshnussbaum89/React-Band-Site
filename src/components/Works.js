@@ -1,39 +1,81 @@
 import React, { Component } from 'react';
-import album from '../images/album-one.jpg';
 
 class Works extends Component {
     state = {
-        isTurned: false
+        // pictures are 0 - 3
+        id: 0,
+        title: [
+            "No Startled All",
+            "In Purple",
+            "Was Tapping Lenore Weak",
+            "The Metell",
+            "In on Lamplight"
+        ],
+        albumUrls: Object.values(this.props),
+        albumDesc: [
+            "Will the of or if at. He and shutter token.",
+            "Stillness fiery all a lenore have rapping. Merely core or.",
+            "Qu'elle vivre aussi de demain souris ou visage. Morceau encadré.",
+            "Pilgrimage chaste mine he later vexed the like have adieu.",
+            "Borrow front hope lent this i the of. Above the."
+        ]
+        // isTurned: false,
     }
 
-    toggleDescription = () => {
-        this.setState((prevState) => ({
-            isTurned: !prevState.isTurned
-        }));
+    // toggleDescription = () => {
+    //     this.setState((prevState) => ({
+    //         isTurned: !prevState.isTurned
+    //     }));
+    // }
+
+    increment = () => {
+        (this.state.id < 4) ?
+            this.setState((prevState) => ({
+                id: prevState.id += 1
+            }))
+            :
+            this.setState((prevState) => ({
+                id: prevState.id = 0
+            }));
+    }
+
+    decrement = () => {
+        (this.state.id >= 1) ?
+            this.setState((prevState) => ({
+                id: prevState.id -= 1
+            }))
+            :
+            this.setState((prevState) => ({
+                id: prevState.id = 3
+            }));
     }
 
     render() {
-        if (this.state.isTurned) {
-            return (
-                <section className='hero-album'>
-                    <img src={album} alt='' className='hero-album-image' />
-                    <div className="overlay" onClick={this.toggleDescription}>
-                        <h3>Album Info</h3>
-                        <p>Burden than that sitting on and wide quaff. In nevermore came bust metell living the, shorn bird on you feather.</p>
-                        <div className="album-arrows">
-                            <span>&#x2190;</span>
-                            <span>&#x2192;</span>
-                        </div>
+        const title = this.state.title;
+        const description = this.state.albumDesc;
+        const url = this.state.albumUrls;
+        const index = this.state.id;
+
+        return (
+            <section className='hero-album'>
+                <img src={url[index]} alt='' className='hero-album-image' />
+                <div className="overlay">
+                    <h3>{title[index]}</h3>
+                    <p>{description[index]}</p>
+                    <div className="album-arrows">
+                        <span onClick={this.decrement}>&#x2190;</span>
+                        <span onClick={this.increment}>&#x2192;</span>
                     </div>
-                </section>
-            )
-        } else {
-            return (
-                <section className='hero-album'>
-                    <img src={album} alt='' onClick={this.toggleDescription} />
-                </section>
-            )
-        }
+                </div>
+            </section>
+        )
+        // } else {
+        //     return (
+        //         <section className='hero-album'>
+        //             <img src={this.state.albumUrls[this.state.id]} alt='' onClick={this.toggleDescription} />
+        //         </section>
+        //     )
+        // }
     }
 }
 
