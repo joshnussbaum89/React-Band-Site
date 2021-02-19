@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 
 class Works extends Component {
     state = {
-        // pictures are 0 - 3
         id: 0,
         title: [
             "No Startled All",
@@ -19,14 +18,7 @@ class Works extends Component {
             "Pilgrimage chaste mine he later vexed the like have adieu.",
             "Borrow front hope lent this i the of. Above the."
         ]
-        // isTurned: false,
     }
-
-    // toggleDescription = () => {
-    //     this.setState((prevState) => ({
-    //         isTurned: !prevState.isTurned
-    //     }));
-    // }
 
     increment = () => {
         (this.state.id < 4) ?
@@ -69,13 +61,6 @@ class Works extends Component {
                 </div>
             </section>
         )
-        // } else {
-        //     return (
-        //         <section className='hero-album'>
-        //             <img src={this.state.albumUrls[this.state.id]} alt='' onClick={this.toggleDescription} />
-        //         </section>
-        //     )
-        // }
     }
 }
 
