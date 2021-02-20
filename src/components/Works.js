@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { motion } from 'framer-motion';
 
 class Works extends Component {
     state = {
@@ -48,8 +49,13 @@ class Works extends Component {
         const url = this.state.albumUrls;
         const index = this.state.id;
 
+
         return (
-            <section className='hero-album'>
+            <motion.section
+                className='hero-album'
+                animate={{ opacity: 1 }}
+                transition={{ ease: 'easeInOut', duration: 1 }}
+            >
                 <img src={url[index]} alt='' className='hero-album-image' />
                 <div className="overlay">
                     <h3>{title[index]}</h3>
@@ -59,7 +65,7 @@ class Works extends Component {
                         <span onClick={this.increment}>&#x2192;</span>
                     </div>
                 </div>
-            </section>
+            </motion.section>
         )
     }
 }
