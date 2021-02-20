@@ -1,6 +1,7 @@
 import { NavLink, Link } from 'react-router-dom';
+import MobileNavigation from './MobileNavigation';
 
-const Header = () => {
+const Header = ({ navIsOpen, toggleNav }) => {
     return (
         <header className='header'>
             <nav className='header-nav'>
@@ -28,9 +29,10 @@ const Header = () => {
                     </li>
                 </ul>
                 <div>
-                    <NavLink to='/'><svg className='nav-icon-mobile' viewBox="-50 -115 512 512" xmlns="http://www.w3.org/2000/svg"><path d="M368 154.668H16c-8.832 0-16-7.168-16-16s7.168-16 16-16h352c8.832 0 16 7.168 16 16s-7.168 16-16 16zM368 32H16C7.168 32 0 24.832 0 16S7.168 0 16 0h352c8.832 0 16 7.168 16 16s-7.168 16-16 16zm0 245.332H16c-8.832 0-16-7.168-16-16s7.168-16 16-16h352c8.832 0 16 7.168 16 16s-7.168 16-16 16zm0 0" /></svg></NavLink>
+                    <svg onClick={toggleNav} className='nav-icon-mobile' viewBox="-50 -115 512 512" xmlns="http://www.w3.org/2000/svg"><path d="M368 154.668H16c-8.832 0-16-7.168-16-16s7.168-16 16-16h352c8.832 0 16 7.168 16 16s-7.168 16-16 16zM368 32H16C7.168 32 0 24.832 0 16S7.168 0 16 0h352c8.832 0 16 7.168 16 16s-7.168 16-16 16zm0 245.332H16c-8.832 0-16-7.168-16-16s7.168-16 16-16h352c8.832 0 16 7.168 16 16s-7.168 16-16 16zm0 0" /></svg>
                 </div>
             </nav>
+            {navIsOpen ? <MobileNavigation toggleNav={toggleNav} /> : null}
         </header>
     )
 }

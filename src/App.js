@@ -64,14 +64,25 @@ class App extends Component {
         venue: 'Cystal Grand Music Theatre',
         date: '01.12.2021'
       },
-    ]
+    ],
+    navIsOpen: false
+  }
+
+  // Toggle mobile navigation overlay
+  toggleNav = () => {
+    this.setState((prevState) => ({
+      navIsOpen: !prevState.navIsOpen
+    }))
   }
 
   render() {
     return (
       <BrowserRouter>
         <div className='container'>
-          <Header />
+          <Header
+            toggleNav={this.toggleNav}
+            navIsOpen={this.state.navIsOpen}
+          />
           <Switch>
             <Route exact path='/' render={() => <Hero />} />
             <Route path='/about' render={() =>
