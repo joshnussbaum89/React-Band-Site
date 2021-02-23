@@ -65,13 +65,21 @@ class App extends Component {
         date: '01.12.2021'
       },
     ],
-    navIsOpen: false
+    navIsOpen: false,
+    isToggled: false
   }
 
   // Toggle mobile navigation overlay
   toggleNav = () => {
     this.setState((prevState) => ({
       navIsOpen: !prevState.navIsOpen
+    }))
+  }
+
+  // toggle about/tour pages
+  toggleTourDates = () => {
+    this.setState((prevState) => ({
+      isToggled: !prevState.isToggled
     }))
   }
 
@@ -88,6 +96,8 @@ class App extends Component {
             <Route path='/about' render={() =>
               <About
                 tourDates={this.state.tourDates}
+                isToggled={this.state.isToggled}
+                toggleTourDates={this.toggleTourDates}
               />}
             />
             <Route path='/works' render={() =>
