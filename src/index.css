@@ -292,6 +292,10 @@ h2 {
   text-align: center;
 }
 
+.overlay p {
+  display: none;
+}
+
 .overlay h3 {
   font-size: 1.6rem;
   font-weight: lighter;
@@ -364,7 +368,7 @@ textarea {
 }
 
 /* Media query - medium size screen and up */
-@media (min-width: 776px) {
+@media (min-width: 768px) {
   .container {
     padding: 0 3rem;
   }
@@ -383,5 +387,9 @@ textarea {
 
   .overlay h3 {
     font-size: 2rem;
+  }
+
+  .overlay p {
+    display: block;
   }
 }
